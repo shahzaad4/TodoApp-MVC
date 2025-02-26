@@ -1,0 +1,16 @@
+﻿@model ToDo.Models.ToDoItem
+
+<h2>Delete Todo</h2>
+
+<div>
+    <h4>Are you sure you want to delete this item?</h4>
+    <div>
+        <strong>Title:</strong>@Model.Title<br />
+        <strong>Completed:</strong>@Model.IsCompleted
+    </div>
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a href="@Url.Action("Index","Todo")" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
