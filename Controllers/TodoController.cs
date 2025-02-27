@@ -13,10 +13,15 @@ namespace ToDo.Controllers
         {
             _context = context;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchQuery)
         {
-            var todoItems = await _context.ToDoItems.ToListAsync();
-            return View(todoItems);
+            var tasks = string.IsNullOrEmpty(searchQuery)
+                ? await _context.ToDoItems.ToListAsync()
+                :await _context.ToDoItems
+                .Where(t=>EF.Functions.Like(t.Title,$"%{searchQuery}%"))
+                .ToListAsync();
+            ViewData["SearchQuery"] = searchQuery;
+            return View(tasks);
         }
         public IActionResult Create()
         {

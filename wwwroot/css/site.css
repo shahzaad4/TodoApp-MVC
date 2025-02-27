@@ -1,22 +1,107 @@
-html {
-  font-size: 14px;
-}
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
 
 body {
-  margin-bottom: 60px;
+    background: linear-gradient(135deg, #1d8755, #084f5c);
+    color: white;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    padding: 0 20px;
 }
+
+.container {
+    max-width: 800px;
+    width: 100%;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.task-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 50px;
+    border: 1px solid #ddd;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    background-color: #f4f4f4;
+}
+
+    .task-input:focus {
+        outline: none;
+        border-color: #3498db;
+    }
+
+.task-list {
+    margin-top: 30px;
+}
+
+a, a:hover {
+    color: #198754;
+}
+
+.complete-btn {
+    color: seagreen;
+}
+
+.pending-btn {
+    color: orangered;
+}
+
+.fas {
+    background-color: ghostwhite;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.task-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+    .task-card .task-title {
+        font-size: 1.5rem;
+        flex-grow: 1;
+    }
+
+    .task-card .task-actions i {
+        margin: 0 5px;
+        cursor: pointer;
+    }
+
+    .task-card .task-actions .delete-btn {
+        color: #e74c3c;
+    }
+
+    .task-card .task-actions .complete-btn {
+        color: #2ecc71;
+    }
+
+.add-task-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: ghostwhite;
+    color: #ffc107;
+    border: none;
+    border-radius: 50%;
+    padding: 6px 9px;
+    font-size: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+    .add-task-btn:hover {
+        background-color: ghostwhite;
+    }

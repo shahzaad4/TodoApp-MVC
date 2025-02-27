@@ -1,20 +1,25 @@
 ﻿@model ToDo.Models.ToDoItem
 
-<h2>Edit Todo</h2>
+<div class="container">
 
-<form asp-action="Edit" method="post">
-    @Html.AntiForgeryToken()
-    <input type="hidden" asp-for="Id"/>
+    <h2 class="title">Edit Todo</h2>
 
-    <div class="form-group">
-        <label for="Title">Title</label>
-        <input type="text" class="form-control" asp-for="Title" />
+        <form asp-action="Edit" method="post">
+            @Html.AntiForgeryToken()
+            <input type="hidden" asp-for="Id" />
+
+            <div class="form-group">
+                <label for="Title">Title</label>
+                <input type="text" class="form-control" asp-for="Title" />
+            </div>
+
+            <div class="form-group my-3">
+                <label for="IsCompleted">Completed</label>
+                <input type="checkbox" asp-for="IsCompleted" class="form-check-input" />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+            <a href="@Url.Action("Index", "Todo")" class="btn btn-secondary">Cancel</a>
+
+        </form>
     </div>
-
-    <div class="form-group">
-        <label for="IsCompleted">Completed</label>
-        <input type="checkbox" asp-for="IsCompleted" class="form-check-input" />
-    </div>
-
-    <button type="submit" class="btn btn-primary">Save Changes</button>
-</form>
